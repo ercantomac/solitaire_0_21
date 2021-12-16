@@ -1,0 +1,35 @@
+name: solitaire_0_21
+description: Solitaire 0 - 21 Game.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.15.0-268.8.beta <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  shared_preferences: ^2.0.11
+  google_mobile_ads: ^1.0.1
+  audioplayers: ^0.20.1
+
+dev_dependencies:
+  flutter_lints: ^1.0.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/WIN3.mp3
+    - assets/LOSE.wav
+    - assets/card_pick.mp3
+    - assets/coin_drop.mp3
+    - assets/theme_switch.mp3
+    - assets/warning.mp3
+    - assets/starting.mp3
+
+  fonts:
+    - family: Quicksand
+      fonts:
+        - asset: assets/Quicksand-Light.ttf
