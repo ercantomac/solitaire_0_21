@@ -9,7 +9,6 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 void main() {
-  //Paint.enableDithering = true;
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
   runApp(const MyApp());
@@ -164,7 +163,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   void _loadAd(int type) {
     InterstitialAd.load(
-        //adUnitId: 'ca-app-pub-7651255833293298/8486287733',
         adUnitId: 'ca-app-pub-3940256099942544/1033173712',
         request: const AdRequest(),
         adLoadCallback: InterstitialAdLoadCallback(
@@ -198,7 +196,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   void _loadBonusAd(String type) {
     InterstitialAd.load(
-        //adUnitId: 'ca-app-pub-7651255833293298/8486287733',
         adUnitId: 'ca-app-pub-3940256099942544/1033173712',
         request: const AdRequest(),
         adLoadCallback: InterstitialAdLoadCallback(
@@ -819,7 +816,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                           return Transform.scale(
                             scale: Tween<double>(begin: 1.0, end: 0.97)
                                 .animate(
-                                    CurvedAnimation(parent: _controller, curve: Curves.easeOutCubic, reverseCurve: /*Curves.easeInBack*/ Curves.decelerate))
+                                    CurvedAnimation(parent: _controller, curve: Curves.easeOutCubic, reverseCurve: Curves.decelerate))
                                 .value,
                             child: AnimatedContainer(
                               key: const ValueKey<String>('sumCard3'),
@@ -835,24 +832,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                                         : (value >= 21 || value < 1)
                                             ? MyColors.orangered
                                             : MyColors.blue,
-                                /*gradient: const LinearGradient(
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                  colors: <Color>[
-                                    //Colors.white10,
-                                    Colors.transparent,
-                                    Colors.black12
-                                  ],
-                                ),*/
                                 shape: const RoundedRectangleBorder(
                                   borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                                  /*side: ((value > 15 && value <= 18) || (value >= 3 && value <= 5))
-                                      ? const BorderSide(color: MyColors.light)
-                                      : ((value > 18 && value < 21) || (value < 3 && value >= 1))
-                                          ? const BorderSide(color: MyColors.gold)
-                                          : (value >= 21 || value < 1)
-                                              ? const BorderSide(color: MyColors.orangered)
-                                              : const BorderSide(color: MyColors.blue),*/
                                 ),
                                 shadows: <BoxShadow>[
                                   ((value > 15 && value <= 18) || (value >= 3 && value <= 5))
@@ -890,53 +871,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                                     fontSize: 72.0,
                                     color: MyApp._mainColor,
                                   ),
-                                  /*((value > 15 && value <= 18) || (value >= 3 && value <= 5))
-                                      ? TextStyle(
-                                          fontFamily: 'Quicksand',
-                                          fontSize: 72.0,
-                                          color: MyColors.light,
-                                          shadows: <Shadow>[
-                                            Shadow(
-                                              color: MyColors.light.withOpacity(0.56),
-                                              blurRadius: 42.0,
-                                            ),
-                                          ],
-                                        )
-                                      : ((value > 18 && value < 21) || (value < 3 && value >= 1))
-                                          ? TextStyle(
-                                              fontFamily: 'Quicksand',
-                                              fontSize: 72.0,
-                                              color: MyColors.gold,
-                                              shadows: <Shadow>[
-                                                Shadow(
-                                                  color: MyColors.gold.withOpacity(0.56),
-                                                  blurRadius: 42.0,
-                                                ),
-                                              ],
-                                            )
-                                          : (value >= 21 || value < 1)
-                                              ? TextStyle(
-                                                  fontFamily: 'Quicksand',
-                                                  fontSize: 72.0,
-                                                  color: MyColors.orangered,
-                                                  shadows: <Shadow>[
-                                                    Shadow(
-                                                      color: MyColors.orangered.withOpacity(0.56),
-                                                      blurRadius: 42.0,
-                                                    ),
-                                                  ],
-                                                )
-                                              : TextStyle(
-                                                  fontFamily: 'Quicksand',
-                                                  fontSize: 72.0,
-                                                  color: MyColors.blue,
-                                                  shadows: <Shadow>[
-                                                    Shadow(
-                                                      color: MyColors.blue.withOpacity(0.56),
-                                                      blurRadius: 42.0,
-                                                    ),
-                                                  ],
-                                                ),*/
                                   child: Text('$value'),
                                 ),
                               ),
@@ -1215,14 +1149,6 @@ class BuildCards extends StatelessWidget {
                     borderRadius: const BorderRadius.all(Radius.circular(16.0)),
                     side: BorderSide(color: (_mediumColor == MyColors.mediumDark) ? Colors.white30 : Colors.black38, width: 0.2),
                   ),
-                  /*gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: <Color>[
-                        Colors.white10,
-                        Colors.transparent,
-                      ],
-                    ),*/
                 ),
                 child: Center(
                   child: Text(
@@ -1231,12 +1157,6 @@ class BuildCards extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 56.0,
                       color: (int.parse(_number)) > 0 ? MyColors.limegreen : MyColors.orangered,
-                      /*shadows: <Shadow>[
-                        Shadow(
-                          color: (int.parse(_number)) > 0 ? MyColors.limegreen.withOpacity(0.56) : MyColors.orangered.withOpacity(0.56),
-                          blurRadius: 42.0,
-                        ),
-                      ],*/
                     ),
                   ),
                 ),
